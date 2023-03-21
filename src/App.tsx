@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes, Link, NavLink } from 'react-router-dom';
+import { Navbar } from './components/navbar/navbar';
+import logo from './assets/logo.png';
+import { Home } from './components/home/home';
+import { About } from './components/about/about';
+import { MyLessons } from './components/myLessons/myLessons';
+import { Workshops } from './components/workshops/workshops';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div>
+        <Navbar />
+        <img src={logo} alt='logo'></img>
+      </div>
+      <div>
+        <Routes>
+          <Route path='/Home' element={<Home />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/MyLessons' element={<MyLessons />} />
+          <Route path='/Workshops' element={<Workshops />} />
+        </Routes>
+      </div>
+
     </div>
-  );
+  )
+}
+
+export const SpecialApp = () => {
+  return (
+    <div>
+      <App />
+    </div>
+  )
 }
 
 export default App;
