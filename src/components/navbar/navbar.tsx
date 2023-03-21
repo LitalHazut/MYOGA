@@ -4,21 +4,21 @@ export const Navbar = () => {
     return (
         <>
             <nav className='navbar'>
-                <a >MYOGA</a>
+                <h4>MYOGA</h4>
 
                 <div>
                     <ul className='horizontal-list'>
                         <li>
-                            <a href='/Home' className='nav-link'>Home</a>
-                        </li>
-                        <li>
-                            <a href='/About' className='nav-link'>About</a>
+                            <a href='/Contact' className='nav-link'>Contact</a>
                         </li>
                         <li>
                             <a href='/MyLessons' className='nav-link'>My lessons</a>
                         </li>
                         <li>
                             <a href='/Workshops' className='nav-link'>Workshops</a>
+                        </li>
+                        <li>
+                            <a href='/Login' className='nav-link'>Login</a>
                         </li>
                     </ul>
 

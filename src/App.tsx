@@ -1,27 +1,28 @@
 import React from 'react';
 import './App.css';
-import { Route, Routes, Link, NavLink } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/navbar/navbar';
 import logo from './assets/logo.png';
-import { Home } from './components/home/home';
-import { About } from './components/about/about';
+import { Contact } from './components/contact/contact';
 import { MyLessons } from './components/myLessons/myLessons';
 import { Workshops } from './components/workshops/workshops';
+import { Login } from './components/login/login';
+
 
 function App() {
   return (
     <div className="App">
-
       <div>
         <Navbar />
-        <img src={logo} alt='logo'></img>
+        <img src={logo} className="logo" alt='logo'></img>
       </div>
       <div>
         <Routes>
-          <Route path='/Home' element={<Home />} />
-          <Route path='/About' element={<About />} />
+          <Route path='/Login' element={<Login />} />
           <Route path='/MyLessons' element={<MyLessons />} />
           <Route path='/Workshops' element={<Workshops />} />
+          <Route path='/Contact' element={<Contact />} />
+
         </Routes>
       </div>
 

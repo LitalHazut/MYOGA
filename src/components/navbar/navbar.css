@@ -1,7 +1,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 30px;
     border-bottom: 2px solid #fff;
 }
 
@@ -22,11 +22,12 @@ ul.horizontal-list li {
     padding: 0 0.5rem;
 }
 
-li:hover {
+.nav-link:hover {
     font-weight: bold;
 }
+
 .navbar{
-    background-color: darkgray;
+    background-color: rgb(145, 25, 145);
 }
 
 a {
