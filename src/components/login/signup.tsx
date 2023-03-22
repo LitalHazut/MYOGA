@@ -5,27 +5,30 @@ const handleSubmit = (event: React.FormEvent<EventTarget>) => {
     event.preventDefault();
     console.log("submit")
 };
-export const Login = () => {
+
+
+export const Signup = () => {
     return (
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
-                    <label>Username:</label>
-                    <input type="text" name="uname" placeholder="write email" required />
+                    <label>Email:</label>
+                    <input type="text" name="email" placeholder="write email" required />
                 </div>
                 <div className="input-container">
                     <label>Password:</label>
                     <input type="password" name="pass" placeholder="write password" required />
                 </div>
+                <div className="input-container">
+                    <label>Confirm Password:</label>
+                    <input type="password" name="copass" placeholder="write Confirm password" required />
+                </div>
                 <div className="button-container">
-                    <input type="submit" value="submit"/>
+                    <input type="submit" value="Create Account" />
                 </div>
                 <br />
-                <label>Don't have an Account?</label>
-                <a href='/signup'> Sign up</a>
             </form>
         </div>
     )
 
 }
-

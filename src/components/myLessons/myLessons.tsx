@@ -7,10 +7,10 @@ import ashtanga from '../../../src/assets/ashtangayoga.jpeg';
 export const MyLessons = () => {
     return (
         <>
-            <h1>Our Lessons:</h1>
+            <h1>My Lessons:</h1>
             <div >
-                <ul className="uldiv">
-                    <li>
+                <ul className="horizontal-list">
+                    <li >
                         <h3>Soft yoga</h3>
                         <img src={soft}></img>
                         <div className='row'>

@@ -1,13 +1,3 @@
-ul.uldiv {
-    list-style: none;
-
-}
-
-.uldiv li {
-    display: inline-block;
-    padding: 3.5rem;
-}
-
 img {
     width: 300px;
     height: auto;

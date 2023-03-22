@@ -8,7 +8,7 @@ export const Workshops = () => {
         <>
             <h1>Our Workshops:</h1>
             <div >
-                <ul className="uldiv">
+                <ul className="horizontal-list">
                     <li>
                         <h3>Pranayama</h3>
                         <img src={pranayama}></img>

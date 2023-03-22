@@ -7,6 +7,7 @@ import { Contact } from './components/contact/contact';
 import { MyLessons } from './components/myLessons/myLessons';
 import { Workshops } from './components/workshops/workshops';
 import { Login } from './components/login/login';
+import { Signup } from './components/login/signup';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           <Route path='/MyLessons' element={<MyLessons />} />
           <Route path='/Workshops' element={<Workshops />} />
           <Route path='/Contact' element={<Contact />} />
-
+          <Route path="/Signup" element={<Signup />} />
         </Routes>
       </div>
 
