@@ -1,9 +1,10 @@
+import React from 'react';
 import './login.css';
 
 
 const handleSubmit = (event: React.FormEvent<EventTarget>) => {
     event.preventDefault();
-    console.log("submit")
+    console.log("create")
 };
 
 
