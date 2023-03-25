@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -48,18 +48,5 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
     "web-vitals": "^3.3.0"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LitalHazut/MYOGA.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LitalHazut/MYOGA/issues"
-  },
-  "homepage": "https://github.com/LitalHazut/MYOGA#readme"
+  }
 }

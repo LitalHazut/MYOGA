@@ -17,10 +17,13 @@ if (process.env.NONE_ENV === 'production') {
   };
   app.use(cors(corsOptions));
 }
+app.use(express.static(__dirname));
 
-app.get('api/get', function (req, res) {
-  res.send('GET request to the homepage');
+app.get("api/get", function (req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
