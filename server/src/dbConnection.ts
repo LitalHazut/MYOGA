@@ -4,7 +4,7 @@ const dbConnection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'accounts',
+  database: 'myoga',
 });
 
 export default dbConnection;

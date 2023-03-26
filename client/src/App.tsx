@@ -10,25 +10,24 @@ import { Login } from './components/login/login';
 import { Main } from './components/main/main';
 import axios from 'axios';
 import { Gallery } from './components/gallery/gallery';
+import { fetchTasks } from './accounts-service';
 
 
 function App() {
   const [data, setData] = React.useState(null);
 
   useEffect(() => {
-    axios.get('api/get')
+    fetchTasks()
       .then((data) => {
-        setData(data.data);
+        setData(data.data.accounts);
       })
       .catch((e) => {
         return e;
       });
   }, []);
 
-
   return (
     <div className="App">
-      <p>{!data ? "Loading..." : data}</p>
       <div>
         <Navbar />
         <img src={logo} className="logo" alt='logo'></img>

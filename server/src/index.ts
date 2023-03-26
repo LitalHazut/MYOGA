@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import * as path from 'path';
+import AccountsService from './accountService';
 
 const app = express();
 const PORT = 3001;
@@ -17,10 +18,19 @@ if (process.env.NONE_ENV === 'production') {
   };
   app.use(cors(corsOptions));
 }
-app.use(express.static(__dirname));
 
-app.get("api/get", function (req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+const accountsService = new AccountsService();
+
+app.get('/api/get', async (req, res) => {
+  res.send({ accounts: await accountsService.getAllAccounts() });
+});
+
+app.post('/api/post', async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const password = req.body.password;
+  res.send({ accounts: await accountsService.createAccount(name, email, password) });
+  console.log("add account with ${name}");
 });
 
 
@@ -28,3 +38,4 @@ app.get("api/get", function (req, res) {
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
+
