@@ -20,6 +20,9 @@ export const Navbar = () => {
                         <li>
                             <a href='/Login' className='nav-link'>Login</a>
                         </li>
+                        <li>
+                            <a href='/Gallery' className='nav-link'>Gallery</a>
+                        </li>
                     </ul>
 
                 </div>

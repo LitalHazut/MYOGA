@@ -9,6 +9,7 @@ export const Login = () => {
     return (
         <div className="form">
             <form onSubmit={handleSubmit}>
+                <h2>Please Log In</h2>
                 <div className="input-container">
                     <label>Username:</label>
                     <input type="text" name="uname" placeholder="write email" required />
@@ -18,7 +19,7 @@ export const Login = () => {
                     <input type="password" name="pass" placeholder="write password" required />
                 </div>
                 <div className="button-container">
-                    <input type="submit" value="submit"/>
+                    <input type="submit" value="submit" />
                 </div>
                 <br />
                 <label>Don't have an Account?</label>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/navbar/navbar';
@@ -10,11 +10,12 @@ import { Login } from './components/login/login';
 import { Signup } from './components/login/signup';
 import { Main } from './components/main/main';
 import axios from 'axios';
+import { Gallery } from './components/gallery/gallery';
 
 
 function App() {
-
   const [data, setData] = React.useState(null);
+
   useEffect(() => {
     axios.get('api/get')
       .then((data) => {
@@ -32,6 +33,7 @@ function App() {
       <div>
         <Navbar />
         <img src={logo} className="logo" alt='logo'></img>
+
       </div>
       <div>
         <Routes>
@@ -41,6 +43,7 @@ function App() {
           <Route path='/Workshops' element={<Workshops />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path="/Signup" element={<Signup />} />
+          <Route path="Gallery" element={<Gallery />} />
         </Routes>
       </div>
 
