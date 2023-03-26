@@ -7,7 +7,6 @@ import { Contact } from './components/contact/contact';
 import { MyLessons } from './components/myLessons/myLessons';
 import { Workshops } from './components/workshops/workshops';
 import { Login } from './components/login/login';
-import { Signup } from './components/login/signup';
 import { Main } from './components/main/main';
 import axios from 'axios';
 import { Gallery } from './components/gallery/gallery';
@@ -42,8 +41,7 @@ function App() {
           <Route path='/MyLessons' element={<MyLessons />} />
           <Route path='/Workshops' element={<Workshops />} />
           <Route path='/Contact' element={<Contact />} />
-          <Route path="/Signup" element={<Signup />} />
-          <Route path="Gallery" element={<Gallery />} />
+          <Route path="/Gallery" element={<Gallery />} />
         </Routes>
       </div>
 

@@ -5,6 +5,12 @@
     border-bottom: 2px solid #fff;
 }
 
+.studioName {
+    position: relative;
+    left: -8px;
+    top: -10px;
+}
+
 .navbar-brand {
     font-size: 3em;
     color: #fff !important;
@@ -26,10 +32,10 @@ ul.horizontal-list li {
     font-weight: bold;
 }
 
-.navbar{
+.navbar {
     background-color: rgb(145, 25, 145);
 }
 
 a {
     text-decoration: none;
-  }
+}

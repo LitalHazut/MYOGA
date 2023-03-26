@@ -4,7 +4,7 @@ export const Navbar = () => {
     return (
         <>
             <nav className='navbar'>
-                <h4>MYOGA</h4>
+                <h3 className='studioName'>MYOGA</h3>
 
                 <div>
                     <ul className='horizontal-list'>

@@ -33,8 +33,9 @@
 .logo {
   width: 30px;
   position: absolute;
-  top: 8px;
-  left: 16px;
+  top: 0;
+  left: 0;
+  margin: auto;
 
 }
 
