@@ -21,17 +21,7 @@ class AccountsService {
             })
         );
     }
-    checkIfEmailExist(email: string) {
-        const sql = dbConnection.query('SELECT email FROM accounts where email = ?');
-        console.log(sql);
-        return new Promise((resolve, reject) =>
-            dbConnection.query(sql, email, (err, result) => {
-                if (err) reject(err);
-                resolve(result);
-
-            })
-        );
-    }
+   
 
 }
 export default AccountsService;

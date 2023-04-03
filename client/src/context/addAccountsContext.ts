@@ -1,4 +1,4 @@
-import { createAccount, checkEmail } from '../accounts-service';
+import { createAccount } from '../accounts-service';
 import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
 import { IAccount } from '../types';

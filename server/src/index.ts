@@ -33,11 +33,6 @@ app.post('/api/post', async (req, res) => {
   res.send({ accounts: await accountsService.createAccount(name, email, password) });
 
 });
-app.post('/api/postemail', async (req, res) => {
-  const email = req.body.email;
-  res.send({ accounts: await accountsService.checkIfEmailExist(email) });
-
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
