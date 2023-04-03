@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
   },
   "exclude": [
     "node_modules",

@@ -3,11 +3,6 @@ import React, { useState } from "react"
 import { useAddAccount } from '../../context/addAccountsContext';
 
 
-const handleSubmit = (event: React.FormEvent<EventTarget>) => {
-    event.preventDefault();
-    console.log("submit")
-};
-
 export const Login = () => {
     const [authMode, setAuthMode] = useState("signin")
     const [newAccount, setNewAccount] = React.useState('');
@@ -36,6 +31,7 @@ export const Login = () => {
                                 type="email"
                                 className="form-control mt-1"
                                 placeholder="Enter email"
+                                required
                             />
                         </div>
                         <div className="form-group mt-3">
@@ -44,13 +40,10 @@ export const Login = () => {
                                 type="password"
                                 className="form-control mt-1"
                                 placeholder="Enter password"
+                                required
                             />
                         </div>
-                        <div className="d-grid gap-2 mt-3">
-                            <button type="submit" className="btn btn-primary">
-                                Submit
-                            </button>
-                        </div>
+                        <LoginAccount email={email} />
                     </div>
                 </form>
             </div>
@@ -69,14 +62,9 @@ export const Login = () => {
                                 Sign In
                             </span>
                         </div>
-                        <div className="form-group mt-3">
-                            <label>Full Name</label>
-                            <input
-                                type="name"
-                                className="form-control mt-1"
-                                placeholder="e.g Jane Doe"
-                            />
-                        </div>
+
+                        <NewAccountInput newAccount={newAccount} setNewAccount={setNewAccount} />
+
                         <div className="form-group mt-3">
                             <label>Email address</label>
                             <input
@@ -85,6 +73,7 @@ export const Login = () => {
                                 className="form-control mt-1"
                                 placeholder="Email Address"
                                 id="email"
+                                required
                             />
                         </div>
                         <div className="form-group mt-3">
@@ -95,32 +84,60 @@ export const Login = () => {
                                 className="form-control mt-1"
                                 placeholder="Password"
                                 id="password"
+                                required
                             />
                         </div>
-                        <SubmitAccount newAccount={newAccount} email={email} password={pass} setNewAccount={setNewAccount} />
+                        <CreateAccount newAccount={newAccount} email={email} password={pass} />
                     </div>
                 </form>
             </div>
         </>
     )
 };
-const SubmitAccount: React.FC<{
+
+const NewAccountInput: React.FC<{
+    newAccount: string;
+    setNewAccount: (newAccount: string) => void;
+}> = ({ newAccount, setNewAccount }) => (
+    <div className="form-group mt-3">
+        <label>Full Name</label>
+        <input
+            value={newAccount}
+            onChange={(e) => setNewAccount(e.target.value)}
+            type="name"
+            className="form-control mt-1"
+            placeholder="e.g Jane Doe"
+            required
+        />
+    </div>
+);
+
+
+const CreateAccount: React.FC<{
     newAccount: string;
     email: string;
     password: string;
-    setNewAccount: (newAccount: string) => void;
-}> = ({ newAccount, email, password, setNewAccount }) => {
-    const addAccount = useAddAccount(setNewAccount);
+}> = ({ newAccount, email, password }) => {
+    const addAccount = useAddAccount();
 
     return (
         <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary" onClick={(e) => addAccount(newAccount, email, password)}>
-                Submit
+                Create Account
             </button>
         </div>
     );
 };
 
 
-
-
+const LoginAccount: React.FC<{
+    email: string;
+}> = ({ email }) => {
+    return (
+        <div className="d-grid gap-2 mt-3">
+            <button type="submit" className="btn btn-primary" >
+                Login
+            </button>
+        </div >
+    );
+};

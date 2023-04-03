@@ -11,9 +11,6 @@ class AccountsService {
         );
     }
 
-
-
-
     createAccount(name: string, email: string, password: string) {
         const sql = `INSERT INTO accounts(name,email,password) VALUES (?, ?,?)`;
         const values = [name, email, password];
@@ -24,5 +21,17 @@ class AccountsService {
             })
         );
     }
+    checkIfEmailExist(email: string) {
+        const sql = dbConnection.query('SELECT email FROM accounts where email = ?');
+        console.log(sql);
+        return new Promise((resolve, reject) =>
+            dbConnection.query(sql, email, (err, result) => {
+                if (err) reject(err);
+                resolve(result);
+
+            })
+        );
+    }
+
 }
 export default AccountsService;
