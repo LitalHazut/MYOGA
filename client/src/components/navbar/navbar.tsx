@@ -9,6 +9,9 @@ export const Navbar = () => {
                 <div>
                     <ul className='horizontal-list'>
                         <li>
+                            <a href='/Main' className='nav-link'>About</a>
+                        </li>
+                        <li>
                             <a href='/MyLessons' className='nav-link'>My lessons</a>
                         </li>
                         <li>
